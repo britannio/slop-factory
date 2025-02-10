@@ -1,13 +1,105 @@
-Retro Snake | A classic snake game with neon grid lines and minimalist pixel art
-Color Picker | An interactive tool with real-time hex code display and gradient generation
-Pomodoro Timer | A minimal productivity timer with clean typography and smooth transitions
-Weather Widget | A single-page weather display with animated weather icons and bold statistics
-Markdown Preview | A split-screen markdown editor and preview with monospace formatting
-Quote Generator | A random quote generator with dynamic background patterns and elegant typography
-Memory Match | A card-matching game with geometric shapes and satisfying animations
-Drum Machine | An interactive drum pad with vibrant colors and responsive touch feedback
-Calculator | A skeuomorphic calculator with tactile button animations and glass morphism
-Resume Builder | A drag-and-drop resume creator with clean, professional templates
-Meditation Space | A calming interface with breathing animations and ambient sound controls
-Digital Clock | An oversized clock display with multiple time zones and smooth transitions
-Password Generator | A secure password generator with strength indicators and copy functionality
+Color Scheme Generator | Professional color palette creator with export options
+Typing Test | Words-per-minute calculator with accuracy metrics
+Rock Paper Scissors | Classic hand game with animated transitions and win streaks
+Animation Creator | Simple keyframe animation builder with preview
+Mood Tracker | Daily mood logging with pattern visualization
+BMI Calculator | Body mass index calculator with health recommendations
+Sound Visualizer | Audio frequency visualization with shapes
+Code Formatter | Beautiful syntax highlighting and code formatting tool
+Diet Planner | Simple meal planning interface
+Math Quiz | Interactive mathematics practice with difficulty progression
+Chemical Balancer | Chemical equation balancing practice tool
+QR Code Generator | Custom QR code creator with styling options
+Simon Says | Memory sequence game with musical tones and glowing buttons
+Posture Check | Desk posture reminder with illustrations
+Periodic Table | Interactive chemical element explorer with details
+Fractal Tree | Recursive tree generator with parameters
+Water Tracker | Daily water intake monitoring with reminders
+Stress Check | Quick stress assessment questionnaire
+Particle System | Interactive particle physics playground
+Regex Tester | Regular expression testing tool with pattern library
+Language Conjugator | Verb conjugation practice with multiple languages
+Chess Tutorial | Basic chess move demonstration and practice
+Texture Generator | Procedural texture creator with randomization
+Contact Form | Professional contact form with validation
+Grid Calculator | CSS grid layout generator with visual preview
+Meeting Timer | Conference timing tool with agenda tracking
+Minesweeper | Grid-based number puzzle with flag marking and reveal animations
+Habit Tracker | Daily habit monitoring with streak counting
+Typography Playground | Font visualization tool with variable controls
+Bubble Generator | Interactive bubble physics simulation
+Orbit Simulator | Simple gravitational orbit demonstration
+Word Scramble | Language puzzle with draggable letters and difficulty levels
+DNA Visualizer | Double helix animation with base pair highlighting
+Maze Generator | Procedurally generated mazes with solving algorithm visualization
+Solar System | Interactive planetary system with orbital animations
+Flow Field | Vector field visualization with particles
+CSV Viewer | Clean tabular data display with sorting capabilities
+Step Counter | Basic pedometer using device motion
+Wave Generator | Interactive sine wave visualization
+Calorie Counter | Basic food calorie tracking interface
+Pendulum Wave | Harmonograph pattern generator
+Doodle Board | Free-form drawing tool with brush customization
+2048 | Number sliding puzzle with smooth animations and clean grid
+File Encoder | Text encoding and decoding tools
+Heart Rate | Manual heart rate calculator with trending
+Geography Quiz | World map clicking game with country recognition
+SVG Path Creator | Visual path drawing tool with code output
+Icon Creator | Simple vector icon builder with export options
+Anatomy Viewer | Basic human anatomy explorer with labels
+Crystal Growth | Crystalline structure growth simulation
+Music Theory | Note recognition and scale visualization tool
+Email Signature Maker | Professional email signature builder with templates
+Lightning Effect | Procedural lightning bolt generator
+Task Timer | Project time tracking with task categorization
+Card War | Simple card game with deck visualization and battle animations
+Ping Pong | Two-player paddle game with retro scoring and particle effects
+Lorem Ipsum Generator | Custom text generator with multiple language options
+Calendar View | Monthly calendar with event highlighting
+Breathing Guide | Animated breathing exercise instructor
+Pixel Art Editor | Simple pixel-based drawing tool with color palette
+Character Counter | Text analysis tool with word and character statistics
+Word Search | Letter grid puzzle with multiple word categories and highlighting
+Math Graph | Function plotting tool with interactive coordinates
+Text Art Generator | ASCII art creator with multiple font styles
+Speed Reader | Text speed reading tool with WPM control
+Photo Filter | Image processing with CSS filter combinations
+Budget Calculator | Basic expense tracking and visualization
+Text Rain | Falling character animation with interaction
+Whack-A-Mole | Reaction game with popup characters and score tracking
+Breakout Clone | Ball and paddle brick breaker with power-ups and particle effects
+Meditation Timer | Gentle meditation timer with ambient sounds
+Paint Splash | Abstract paint splash generator
+Note Taking | Minimal markdown-based note editor with local storage
+Countdown Timer | Event countdown with customizable themes
+Eye Rest | Screen break timer with eye exercises
+Time Zone Converter | World clock with meeting time planning
+Cellular Automata | Conway's Game of Life implementation
+Light Trails | Mouse movement light trail effects
+JSON Validator | Real-time JSON validation with tree visualization
+Favicon Generator | Simple icon creator with multiple size exports
+Historical Timeline | Interactive event timeline with animations
+Tic Tac Toe | Strategic grid game with clean lines and victory animations
+Circuit Builder | Simple digital logic gate simulator
+Noise Generator | Perlin noise-based pattern creator
+Sitemap Generator | Visual sitemap creator with XML export
+Logo Maker | Basic logo generation tool with shape primitives
+Sleep Calculator | Bedtime optimizer based on sleep cycles
+File Converter | Basic text file format converter
+Font Pairing | Typography combination tool with preview text
+Invoice Generator | Simple invoice creation with PDF export
+Workout Timer | Exercise interval timer with rest periods
+Kaleidoscope | Interactive symmetrical pattern creator with color options
+Link Shortener | URL shortening tool with click tracking
+Color Blindness Simulator | Image filter for different color vision types
+Flappy Bird Clone | Side-scrolling obstacle avoidance with minimalist graphics
+Unit Converter | Measurement conversion across multiple systems
+Gradient Editor | Interactive gradient background generator with bezier curves
+Image Cropper | Simple image cropping tool with aspect ratio controls
+Stretching Guide | Simple stretch routine with animations
+Flashcard Maker | Study card creator with spaced repetition
+Mandala Maker | Symmetrical pattern creator with multiple brush types
+Color Match | Fast-paced color and word matching game with timed rounds
+Tetris Clone | A minimal implementation of the classic block-stacking game with neon aesthetics
+Pattern Maker | Geometric pattern generator with randomization options
+Meta Tag Generator | SEO-friendly meta tag creator with preview

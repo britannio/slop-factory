@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { z } from 'zod';
+import Link from 'next/link';
 
 const projectSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -76,57 +77,72 @@ export default function NewProject() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Create New Project</h1>
-      
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2">
-            Project Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => {
-              console.log('Name changed:', e.target.value);
-              setName(e.target.value);
-            }}
-            className="w-full p-2 border rounded"
-            placeholder="My Awesome Website"
+    <div className="min-h-screen bg-gray-100">
+      <div className="max-w-7xl mx-auto p-8">
+        {/* Brutalist Header */}
+        <header className="mb-12">
+          <Link 
+            href="/"
+            className="inline-block mb-8 px-4 py-2 bg-black text-white font-mono hover:bg-gray-800 transition-colors border-2 border-black"
+          >
+            ← BACK
+          </Link>
+          <h1 className="text-5xl font-mono font-bold uppercase tracking-tight">
+            NEW SLOP
+          </h1>
+        </header>
+        
+        <form onSubmit={handleSubmit} className="max-w-5xl space-y-8 font-mono">
+          <div className="space-y-2">
+            <label htmlFor="name" className="block text-lg uppercase font-bold">
+              Project Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => {
+                console.log('Name changed:', e.target.value);
+                setName(e.target.value);
+              }}
+              className="w-full p-4 bg-white border-4 border-black font-mono text-lg focus:outline-none focus:border-gray-700 transition-colors"
+              placeholder="MY AWESOME WEBSITE"
+              disabled={isLoading}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="description" className="block text-lg uppercase font-bold">
+              Description
+            </label>
+            <textarea
+              id="description"
+              value={description}
+              onChange={(e) => {
+                console.log('Description changed:', e.target.value);
+                setDescription(e.target.value);
+              }}
+              className="w-full h-48 p-4 bg-white border-4 border-black font-mono text-lg focus:outline-none focus:border-gray-700 transition-colors resize-none"
+              placeholder="DESCRIBE YOUR WEBSITE..."
+              disabled={isLoading}
+            />
+          </div>
+
+          {error && (
+            <div className="p-4 bg-red-100 border-4 border-red-500 text-red-500 font-mono">
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
             disabled={isLoading}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="description" className="block text-sm font-medium mb-2">
-            Description
-          </label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => {
-              console.log('Description changed:', e.target.value);
-              setDescription(e.target.value);
-            }}
-            className="w-full p-2 border rounded h-32"
-            placeholder="Describe your website..."
-            disabled={isLoading}
-          />
-        </div>
-
-        {error && (
-          <div className="text-red-500 text-sm">{error}</div>
-        )}
-
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
-        >
-          {isLoading ? 'Creating...' : 'Create Project'}
-        </button>
-      </form>
+            className="w-full p-4 bg-black text-white font-mono text-lg uppercase font-bold hover:bg-gray-800 disabled:opacity-50 disabled:hover:bg-black transition-colors border-4 border-black"
+          >
+            {isLoading ? 'GENERATING...' : 'GENERATE WEBSITE'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 } 
