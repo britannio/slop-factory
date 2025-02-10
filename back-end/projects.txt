@@ -1,5 +1,13 @@
-Brutalist Portfolio | A minimalist portfolio website showcasing work in a raw, industrial style
-Digital Zine | An online magazine with bold typography and high contrast design
-Art Gallery | A virtual gallery space for displaying artwork with stark, architectural elements
-Tech Blog | A technical blog with monospaced fonts and exposed grid layouts
-Event Landing | A landing page for a tech conference with sharp angles and exposed structure 
+Retro Snake | A classic snake game with neon grid lines and minimalist pixel art
+Color Picker | An interactive tool with real-time hex code display and gradient generation
+Pomodoro Timer | A minimal productivity timer with clean typography and smooth transitions
+Weather Widget | A single-page weather display with animated weather icons and bold statistics
+Markdown Preview | A split-screen markdown editor and preview with monospace formatting
+Quote Generator | A random quote generator with dynamic background patterns and elegant typography
+Memory Match | A card-matching game with geometric shapes and satisfying animations
+Drum Machine | An interactive drum pad with vibrant colors and responsive touch feedback
+Calculator | A skeuomorphic calculator with tactile button animations and glass morphism
+Resume Builder | A drag-and-drop resume creator with clean, professional templates
+Meditation Space | A calming interface with breathing animations and ambient sound controls
+Digital Clock | An oversized clock display with multiple time zones and smooth transitions
+Password Generator | A secure password generator with strength indicators and copy functionality
