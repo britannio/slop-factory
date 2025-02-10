@@ -55,6 +55,23 @@ def read_root():
     logger.debug("Health check endpoint called")
     return {"Hello": "World"}
 
+@app.get("/projects", response_model=List[ProjectResponse])
+async def list_projects():
+    """Get all projects."""
+    logger.info("Fetching all projects")
+    try:
+        projects = list(Project.select().order_by(Project.created_at.desc()))
+        logger.debug(f"Retrieved {len(projects)} projects")
+        return [{
+            'id': project.id,
+            'name': project.name,
+            'html_content': project.html_content,
+            'initial_prompt': project.initial_prompt
+        } for project in projects]
+    except Exception as e:
+        logger.error(f"Error fetching projects: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}

@@ -1,0 +1,5 @@
+Brutalist Portfolio | A minimalist portfolio website showcasing work in a raw, industrial style
+Digital Zine | An online magazine with bold typography and high contrast design
+Art Gallery | A virtual gallery space for displaying artwork with stark, architectural elements
+Tech Blog | A technical blog with monospaced fonts and exposed grid layouts
+Event Landing | A landing page for a tech conference with sharp angles and exposed structure 
