@@ -1,0 +1,12 @@
+[project]
+name = "back-end"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.45.2",
+    "fastapi-cli>=0.0.7",
+    "fastapi[standard]>=0.115.8",
+    "peewee>=3.17.9",
+]
