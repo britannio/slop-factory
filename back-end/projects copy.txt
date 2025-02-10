@@ -1,3 +1,38 @@
+Color Scheme Generator | Professional color palette creator with export options
+Typing Test | Words-per-minute calculator with accuracy metrics
+Rock Paper Scissors | Classic hand game with animated transitions and win streaks
+Animation Creator | Simple keyframe animation builder with preview
+Mood Tracker | Daily mood logging with pattern visualization
+BMI Calculator | Body mass index calculator with health recommendations
+Sound Visualizer | Audio frequency visualization with shapes
+Code Formatter | Beautiful syntax highlighting and code formatting tool
+Diet Planner | Simple meal planning interface
+Math Quiz | Interactive mathematics practice with difficulty progression
+Chemical Balancer | Chemical equation balancing practice tool
+QR Code Generator | Custom QR code creator with styling options
+Simon Says | Memory sequence game with musical tones and glowing buttons
+Posture Check | Desk posture reminder with illustrations
+Periodic Table | Interactive chemical element explorer with details
+Fractal Tree | Recursive tree generator with parameters
+Water Tracker | Daily water intake monitoring with reminders
+Stress Check | Quick stress assessment questionnaire
+Particle System | Interactive particle physics playground
+Regex Tester | Regular expression testing tool with pattern library
+Language Conjugator | Verb conjugation practice with multiple languages
+Chess Tutorial | Basic chess move demonstration and practice
+Texture Generator | Procedural texture creator with randomization
+Contact Form | Professional contact form with validation
+Grid Calculator | CSS grid layout generator with visual preview
+Meeting Timer | Conference timing tool with agenda tracking
+Minesweeper | Grid-based number puzzle with flag marking and reveal animations
+Habit Tracker | Daily habit monitoring with streak counting
+Typography Playground | Font visualization tool with variable controls
+Bubble Generator | Interactive bubble physics simulation
+Orbit Simulator | Simple gravitational orbit demonstration
+Word Scramble | Language puzzle with draggable letters and difficulty levels
+DNA Visualizer | Double helix animation with base pair highlighting
+Maze Generator | Procedurally generated mazes with solving algorithm visualization
+### | ###
 Solar System | Interactive planetary system with orbital animations
 Flow Field | Vector field visualization with particles
 CSV Viewer | Clean tabular data display with sorting capabilities

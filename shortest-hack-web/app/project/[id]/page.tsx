@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface Message {
   id: number;
@@ -166,69 +167,96 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   };
 
   if (!project) {
-    console.log('Project not loaded yet, showing loading state');
-    return <div className="p-6">Loading...</div>;
+    return (
+      <div className="min-h-screen bg-gray-100">
+        <div className="max-w-7xl mx-auto p-8">
+          <div className="text-2xl font-mono">Loading...</div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="flex h-screen">
-      {/* Website Preview (5/6) */}
-      <div className="w-5/6 h-full">
-        <iframe
-          srcDoc={project.html_content}
-          className="w-full h-full border-r"
-          title="Website Preview"
-          onLoad={() => console.log('iframe content loaded')}
-        />
+    <div className="min-h-screen bg-gray-100">
+      {/* Top Bar */}
+      <div className="w-full bg-black text-white p-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center font-mono">
+          <Link 
+            href="/"
+            className="px-4 py-2 border-2 border-white hover:bg-white hover:text-black transition-colors"
+          >
+            ← BACK TO SLOPS
+          </Link>
+          <h1 className="text-xl uppercase font-bold">{project.name}</h1>
+        </div>
       </div>
 
-      {/* Chat Interface (1/6) */}
-      <div className="w-1/6 h-full flex flex-col bg-white">
-        <div className="p-4 border-b">
-          <h1 className="font-bold">{project.name}</h1>
-        </div>
-
-        {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`p-2 rounded ${
-                message.role === 'user' ? 'bg-blue-100' : 'bg-gray-100'
-              }`}
-            >
-              <div className="text-xs text-gray-500 mb-1">
-                {message.role === 'user' ? 'You' : 'AI'}
-              </div>
-              <div className="text-sm">{message.content}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Message Input */}
-        <form onSubmit={handleSubmit} className="p-4 border-t">
-          {error && <div className="text-red-500 text-sm mb-2">{error}</div>}
-          <div className="flex space-x-2">
-            <input
-              type="text"
-              value={newMessage}
-              onChange={(e) => {
-                console.log('Message input changed:', e.target.value.length);
-                setNewMessage(e.target.value);
-              }}
-              placeholder="Type a message..."
-              className="flex-1 p-2 border rounded"
-              disabled={isLoading}
+      <div className="flex h-[calc(100vh-4rem)]">
+        {/* Website Preview (5/6) */}
+        <div className="w-5/6 p-8 bg-gray-100">
+          <div className="w-full h-full border-8 border-black bg-white">
+            <iframe
+              srcDoc={project.html_content}
+              className="w-full h-full"
+              title="Website Preview"
+              onLoad={() => console.log('iframe content loaded')}
             />
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50"
-            >
-              Send
-            </button>
           </div>
-        </form>
+        </div>
+
+        {/* Chat Interface (1/6) */}
+        <div className="w-1/6 flex flex-col bg-white border-l-8 border-black">
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 font-mono">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`p-4 border-4 ${
+                  message.role === 'user' 
+                    ? 'border-black bg-white' 
+                    : 'border-gray-500 bg-gray-100'
+                }`}
+              >
+                <div className="text-xs uppercase font-bold mb-2">
+                  {message.role === 'user' ? 'YOU' : 'AI'}
+                </div>
+                <div className="text-sm whitespace-pre-wrap">
+                  {message.role === 'assistant' 
+                    ? 'HTML generated.' 
+                    : message.content}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Message Input */}
+          <form onSubmit={handleSubmit} className="p-4 border-t-8 border-black">
+            {error && (
+              <div className="mb-4 p-4 bg-red-100 border-4 border-red-500 text-red-500 font-mono">
+                {error}
+              </div>
+            )}
+            <div className="space-y-4">
+              <textarea
+                value={newMessage}
+                onChange={(e) => {
+                  console.log('Message input changed:', e.target.value.length);
+                  setNewMessage(e.target.value);
+                }}
+                placeholder="MODIFY YOUR WEBSITE..."
+                className="w-full h-32 p-4 bg-white border-4 border-black font-mono text-sm focus:outline-none focus:border-gray-700 transition-colors resize-none"
+                disabled={isLoading}
+              />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full p-4 bg-black text-white font-mono text-sm uppercase font-bold hover:bg-gray-800 disabled:opacity-50 disabled:hover:bg-black transition-colors border-4 border-black"
+              >
+                {isLoading ? 'GENERATING...' : 'GENERATE'}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
