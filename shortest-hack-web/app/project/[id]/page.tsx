@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 
 interface Message {
@@ -18,22 +18,22 @@ interface Project {
   initial_prompt: string | null;
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage() {
+  const { id } = useParams();
   const [project, setProject] = useState<Project | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const router = useRouter();
 
   useEffect(() => {
     // Fetch project and messages
     const fetchData = async () => {
-      console.log('Fetching project data...', { projectId: params.id });
+      console.log('Fetching project data...', { projectId: id });
       try {
         // Fetch project
         console.log('Fetching project details...');
-        const projectResponse = await fetch(`http://localhost:8000/projects/${params.id}`);
+        const projectResponse = await fetch(`http://localhost:8000/projects/${id}`);
         console.log('Project response status:', projectResponse.status);
 
         if (!projectResponse.ok) {
@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
         // Fetch messages
         console.log('Fetching messages...');
-        const messagesResponse = await fetch(`http://localhost:8000/projects/${params.id}/messages`);
+        const messagesResponse = await fetch(`http://localhost:8000/projects/${id}/messages`);
         console.log('Messages response status:', messagesResponse.status);
 
         if (!messagesResponse.ok) {
@@ -72,7 +72,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         const messagesData = await messagesResponse.json();
         console.log('Messages received:', {
           count: messagesData.length,
-          messages: messagesData.map(m => ({
+          messages: messagesData.map((m: Message) => ({
             id: m.id,
             role: m.role,
             contentLength: m.content.length,
@@ -90,21 +90,21 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     };
 
     fetchData();
-  }, [params.id]);
+  }, [id]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newMessage.trim()) return;
 
     console.log('Sending new message...', {
-      projectId: params.id,
+      projectId: id,
       messageLength: newMessage.length,
     });
     setIsLoading(true);
 
     try {
       console.log('Making request to backend...');
-      const response = await fetch(`http://localhost:8000/projects/${params.id}/messages`, {
+      const response = await fetch(`http://localhost:8000/projects/${id}/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -130,8 +130,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
       // Refresh messages and project
       const [messagesResponse, projectResponse] = await Promise.all([
-        fetch(`http://localhost:8000/projects/${params.id}/messages`),
-        fetch(`http://localhost:8000/projects/${params.id}`),
+        fetch(`http://localhost:8000/projects/${id}/messages`),
+        fetch(`http://localhost:8000/projects/${id}`),
       ]);
 
       console.log('Refresh response statuses:', {
@@ -177,7 +177,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen w-full bg-orange-500">
       {/* Top Bar */}
       <div className="w-full bg-black text-white p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center font-mono">
@@ -193,7 +193,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
       <div className="flex h-[calc(100vh-4rem)]">
         {/* Website Preview (5/6) */}
-        <div className="w-5/6 p-8 bg-gray-100">
+        <div className="w-2/3 p-8 bg-gray-100">
           <div className="w-full h-full border-8 border-black bg-white">
             <iframe
               srcDoc={project.html_content}
@@ -205,7 +205,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </div>
 
         {/* Chat Interface (1/6) */}
-        <div className="w-1/6 flex flex-col bg-white border-l-8 border-black">
+        <div className="w-1/3 flex flex-col bg-white border-l-8 border-black">
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 font-mono">
             {messages.map((message) => (
