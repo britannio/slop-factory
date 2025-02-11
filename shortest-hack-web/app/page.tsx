@@ -1,7 +1,6 @@
-'use client'
 import Link from 'next/link';
-import { getProjects } from './actions';
-import { useEffect, useState, useRef } from 'react';
+import { getProjectsStatic } from './actions';
+import { LazyIframe } from './components/LazyIframe';
 
 interface Project {
   id: number;
@@ -10,80 +9,10 @@ interface Project {
   initial_prompt: string | null;
 }
 
-function LazyIframe({ html, title }: { html: string; title: string }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '50px' }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className="relative w-full pt-[56.25%]">
-      {isVisible ? (
-        <iframe
-          srcDoc={html}
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          title={title}
-        />
-      ) : (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-100" />
-      )}
-    </div>
-  );
-}
-
-export default function Home() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await getProjects();
-        // Filter out projects with empty HTML content
-        const validProjects = (data || []).filter((p: Project) => p.html_content?.trim());
-        setProjects(validProjects);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load projects');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen p-8 bg-gray-100">
-        <div className="text-2xl font-mono">Loading projects...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen p-8 bg-gray-100">
-        <div className="text-2xl font-mono text-red-500">{error}</div>
-      </div>
-    );
-  }
+export default async function Home() {
+  const projects = await getProjectsStatic();
+  // Filter out projects with empty HTML content
+  const validProjects = (projects || []).filter((p: Project) => p.html_content?.trim());
 
   return (
     <div className="min-h-screen p-8 bg-gray-100">
@@ -106,7 +35,7 @@ export default function Home() {
         </div>
         <div className="mt-4 flex justify-between items-center">
           <p className="text-lg font-mono">
-            {projects.length} website{projects.length !== 1 ? 's' : ''} generated using LLMs
+            {validProjects.length} website{validProjects.length !== 1 ? 's' : ''} generated using LLMs
           </p>
           {/* <Link
             href="/new"
@@ -119,7 +48,7 @@ export default function Home() {
 
       {/* Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {projects.map((project) => (
+        {validProjects.map((project) => (
           <Link
             key={project.id}
             href={`/project/${project.id}`}
@@ -142,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Empty State */}
-      {projects.length === 0 && (
+      {validProjects.length === 0 && (
         <div className="text-center py-16">
           <p className="text-2xl font-mono mb-8">No projects yet</p>
           <Link

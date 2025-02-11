@@ -4,6 +4,7 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
@@ -135,6 +136,25 @@ export const signOutAction = async () => {
 
 export const getProjects = async () => {
   const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('projects')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+};
+
+export const getProjectsStatic = async () => {
+  // Create a Supabase client without cookies for static data fetching
+  const supabase = createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
   const { data, error } = await supabase
     .from('projects')
     .select('*')
