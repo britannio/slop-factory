@@ -108,12 +108,12 @@ export default function Home() {
           <p className="text-lg font-mono">
             {projects.length} website{projects.length !== 1 ? 's' : ''} generated using LLMs
           </p>
-          <Link
+          {/* <Link
             href="/new"
             className="px-6 py-3 bg-black text-white font-mono hover:bg-gray-800 transition-colors border-2 border-black"
           >
             + MAKE SLOP
-          </Link>
+          </Link> */}
         </div>
       </header>
 
