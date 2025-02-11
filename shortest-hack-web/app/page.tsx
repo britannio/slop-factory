@@ -1,13 +1,50 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+'use client'
 import Link from 'next/link';
+import { getProjects } from './actions';
+import { useEffect, useState, useRef } from 'react';
 
 interface Project {
   id: number;
   name: string;
   html_content: string;
   initial_prompt: string | null;
+}
+
+function LazyIframe({ html, title }: { html: string; title: string }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '50px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="relative w-full pt-[56.25%]">
+      {isVisible ? (
+        <iframe
+          srcDoc={html}
+          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          title={title}
+        />
+      ) : (
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-100" />
+      )}
+    </div>
+  );
 }
 
 export default function Home() {
@@ -18,13 +55,9 @@ export default function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:8000/projects');
-        if (!response.ok) {
-          throw new Error('Failed to fetch projects');
-        }
-        const data = await response.json();
+        const data = await getProjects();
         // Filter out projects with empty HTML content
-        const validProjects = data.filter((p: Project) => p.html_content?.trim());
+        const validProjects = (data || []).filter((p: Project) => p.html_content?.trim());
         setProjects(validProjects);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load projects');
@@ -73,7 +106,7 @@ export default function Home() {
         </div>
         <div className="mt-4 flex justify-between items-center">
           <p className="text-lg font-mono">
-            {projects.length} website{projects.length !== 1 ? 's' : ''} generated
+            {projects.length} website{projects.length !== 1 ? 's' : ''} generated using LLMs
           </p>
           <Link
             href="/new"
@@ -92,15 +125,10 @@ export default function Home() {
             href={`/project/${project.id}`}
             className="group block bg-white border-4 border-black hover:border-gray-700 transition-colors"
           >
-            {/* 16:9 Container */}
-            <div className="relative w-full pt-[56.25%]">
-              <iframe
-                srcDoc={project.html_content}
-                className="absolute top-0 left-0 w-full h-full pointer-events-none"
-                title={project.name}
-              />
-            </div>
-            {/* Project Info */}
+            <LazyIframe 
+              html={project.html_content} 
+              title={project.name} 
+            />
             <div className="p-4 border-t-4 border-black bg-white">
               <h2 className="font-mono font-bold text-lg uppercase truncate">
                 {project.name}
