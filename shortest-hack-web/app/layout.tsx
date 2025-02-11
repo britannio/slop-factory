@@ -1,6 +1,8 @@
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -29,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={geistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
+        <SpeedInsights />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
