@@ -56,9 +56,21 @@ export default function Home() {
     <div className="min-h-screen p-8 bg-gray-100">
       {/* Brutalist Header */}
       <header className="mb-12">
-        <h1 className="text-5xl font-mono font-bold uppercase tracking-tight">
-          SLOP FACTORY
-        </h1>
+        <div className="flex justify-between items-start">
+          <h1 className="text-5xl font-mono font-bold uppercase tracking-tight">
+            SLOP FACTORY
+          </h1>
+          <div className="text-right font-mono">
+            <a href="https://london.aitinkerers.org/p/uk-s-shortest-hackathon-february-10th" className="hover:underline">
+              Winner of UK's Shortest Hackathon
+            </a>
+            <p className="mt-1">
+              Made by <a href="https://britannio.com" className="hover:underline">britannio.com</a>
+              {' • '}
+              <a href="https://github.com/britannio/slop-factory" className="hover:underline">GitHub</a>
+            </p>
+          </div>
+        </div>
         <div className="mt-4 flex justify-between items-center">
           <p className="text-lg font-mono">
             {projects.length} website{projects.length !== 1 ? 's' : ''} generated
@@ -67,7 +79,7 @@ export default function Home() {
             href="/new"
             className="px-6 py-3 bg-black text-white font-mono hover:bg-gray-800 transition-colors border-2 border-black"
           >
-            + NEW PROJECT
+            + MAKE SLOP
           </Link>
         </div>
       </header>

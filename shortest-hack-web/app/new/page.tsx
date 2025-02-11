@@ -21,7 +21,7 @@ export default function NewProject() {
     e.preventDefault();
     console.log('Starting project creation...');
     console.log('Input values:', { name, description });
-    
+
     setError('');
     setIsLoading(true);
 
@@ -77,25 +77,25 @@ export default function NewProject() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 w-full justify-center">
       <div className="max-w-7xl mx-auto p-8">
         {/* Brutalist Header */}
         <header className="mb-12">
-          <Link 
+          <Link
             href="/"
             className="inline-block mb-8 px-4 py-2 bg-black text-white font-mono hover:bg-gray-800 transition-colors border-2 border-black"
           >
             ← BACK
           </Link>
           <h1 className="text-5xl font-mono font-bold uppercase tracking-tight">
-            NEW SLOP
+            NEW SITE
           </h1>
         </header>
-        
+
         <form onSubmit={handleSubmit} className="max-w-5xl space-y-8 font-mono">
           <div className="space-y-2">
             <label htmlFor="name" className="block text-lg uppercase font-bold">
-              Project Name
+              Site Name
             </label>
             <input
               id="name"
