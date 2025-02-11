@@ -1,0 +1,24 @@
+Language Flash | Basic language flashcard system
+Packing List | Interactive travel checklist
+Flight Time | Flight duration calculator
+Culture Info | Country culture fact generator
+Shadow Maker | CSS shadow generator with real-time preview
+Isometric Draw | Simple isometric drawing tool
+Color Harmony | Color harmony rule visualizer
+Paint Mix | Digital color mixing simulator
+Brush Studio | Custom CSS brush effect creator
+3D Text | CSS 3D text effect generator
+Paper Fold | Origami folding simulator
+Mosaic Maker | Image mosaic effect generator
+Glitch Art | Image glitch effect generator
+Line Art | Mathematical curve art generator
+Dice Roller | Multi-sided dice simulator for gaming
+Binary Clock | Alternative time display system
+Morse Code | Text to morse code converter
+Random Name | Team name and group generator
+Gift Ideas | Present suggestion generator
+Seed Plant | Garden planning calendar tool
+Pet Name | Pet name generator with themes
+Recipe Scale | Ingredient quantity calculator
+Widget Make | Custom widget configurator
+Space Calc | Astronomy unit converter

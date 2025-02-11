@@ -1,0 +1,70 @@
+Haiku Generator | Poetry creator with syllable counting and word suggestions
+Story Prompt | Random writing prompt generator with genre selection
+Title Generator | Book and article title generator with style variations
+Rhyme Finder | Interactive rhyming word finder with syllable patterns
+Word Cloud | Dynamic word cloud generator from input text
+Name Generator | Character name generator with cultural variations
+Grammar Check | Basic grammar and style suggestion tool
+Acronym Maker | Creative acronym generator from input phrases
+Poetry Formatter | Verse layout tool with typography options
+Readability Score | Text complexity analyzer with multiple metrics
+Tone Generator | Pure tone generator with frequency control
+Beat Maker | Simple rhythm creation tool with basic sounds
+Piano Roll | Virtual piano with recording capability
+Guitar Tuner | Audio input tuning assistant with frequency display
+Metronome | Visual and audio tempo keeper with tap tempo
+Chord Progression | Chord sequence generator with playback
+Scale Explorer | Musical scale visualization and player
+Sound Mixer | Basic two-channel audio mixer with effects
+Voice Recorder | Simple audio recording with visualization
+Synth Pad | Touch-based synthesizer with oscillator options
+Projectile Motion | Interactive projectile physics simulator
+Chemical Reaction | Simple chemical reaction balancer
+DNA Sequence | Gene sequence visualization tool
+Wave Interference | Wave superposition demonstration
+Circuit Builder | Basic electronic circuit simulator
+Molecule Viewer | 3D molecule structure viewer
+Spectrum Analyzer | Light spectrum visualization tool
+Force Calculator | Physics force and motion calculator
+Planet Orbit | Simple planetary orbit simulator
+Electron Shell | Atomic structure visualization
+Invoice Splitter | Bill splitting calculator with tax and tip
+Stock Ticker | Simple stock price visualization
+Currency Convert | Real-time currency conversion tool
+Meeting Planner | Time zone aware meeting scheduler
+Business Card | Digital business card generator
+Pitch Deck | Simple slide deck creator
+Sales Funnel | Interactive funnel visualization
+Profit Margin | Business calculation helper
+ROI Calculator | Return on investment visualizer
+Expense Track | Basic expense tracking interface
+Distance Calc | Point-to-point distance calculator
+Timezone Map | Interactive timezone visualizer
+Flag Quiz | Country flag recognition game
+Map Marker | Simple location marking tool
+City Compare | Basic city statistics comparison
+Travel Cost | Trip cost estimation calculator
+Language Flash | Basic language flashcard system
+Packing List | Interactive travel checklist
+Flight Time | Flight duration calculator
+Culture Info | Country culture fact generator
+Shadow Maker | CSS shadow generator with real-time preview
+Isometric Draw | Simple isometric drawing tool
+Color Harmony | Color harmony rule visualizer
+Paint Mix | Digital color mixing simulator
+Brush Studio | Custom CSS brush effect creator
+3D Text | CSS 3D text effect generator
+Paper Fold | Origami folding simulator
+Mosaic Maker | Image mosaic effect generator
+Glitch Art | Image glitch effect generator
+Line Art | Mathematical curve art generator
+Dice Roller | Multi-sided dice simulator for gaming
+Binary Clock | Alternative time display system
+Morse Code | Text to morse code converter
+Random Name | Team name and group generator
+Gift Ideas | Present suggestion generator
+Seed Plant | Garden planning calendar tool
+Pet Name | Pet name generator with themes
+Recipe Scale | Ingredient quantity calculator
+Widget Make | Custom widget configurator
+Space Calc | Astronomy unit converter

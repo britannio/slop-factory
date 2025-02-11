@@ -1,71 +1,10 @@
-Solar System | Interactive planetary system with orbital animations
-Flow Field | Vector field visualization with particles
-CSV Viewer | Clean tabular data display with sorting capabilities
-Step Counter | Basic pedometer using device motion
-Wave Generator | Interactive sine wave visualization
-Calorie Counter | Basic food calorie tracking interface
-Pendulum Wave | Harmonograph pattern generator
-Doodle Board | Free-form drawing tool with brush customization
-2048 | Number sliding puzzle with smooth animations and clean grid
-File Encoder | Text encoding and decoding tools
-Heart Rate | Manual heart rate calculator with trending
-Geography Quiz | World map clicking game with country recognition
-SVG Path Creator | Visual path drawing tool with code output
-Icon Creator | Simple vector icon builder with export options
-Anatomy Viewer | Basic human anatomy explorer with labels
-Crystal Growth | Crystalline structure growth simulation
-Music Theory | Note recognition and scale visualization tool
-Email Signature Maker | Professional email signature builder with templates
-Lightning Effect | Procedural lightning bolt generator
-Task Timer | Project time tracking with task categorization
-Card War | Simple card game with deck visualization and battle animations
-Ping Pong | Two-player paddle game with retro scoring and particle effects
-Lorem Ipsum Generator | Custom text generator with multiple language options
-Calendar View | Monthly calendar with event highlighting
-Breathing Guide | Animated breathing exercise instructor
-Pixel Art Editor | Simple pixel-based drawing tool with color palette
-Character Counter | Text analysis tool with word and character statistics
-Word Search | Letter grid puzzle with multiple word categories and highlighting
-Math Graph | Function plotting tool with interactive coordinates
-Text Art Generator | ASCII art creator with multiple font styles
-Speed Reader | Text speed reading tool with WPM control
-Photo Filter | Image processing with CSS filter combinations
-Budget Calculator | Basic expense tracking and visualization
-Text Rain | Falling character animation with interaction
-Whack-A-Mole | Reaction game with popup characters and score tracking
-Breakout Clone | Ball and paddle brick breaker with power-ups and particle effects
-Meditation Timer | Gentle meditation timer with ambient sounds
-Paint Splash | Abstract paint splash generator
-Note Taking | Minimal markdown-based note editor with local storage
-Countdown Timer | Event countdown with customizable themes
-Eye Rest | Screen break timer with eye exercises
-Time Zone Converter | World clock with meeting time planning
-Cellular Automata | Conway's Game of Life implementation
-Light Trails | Mouse movement light trail effects
-JSON Validator | Real-time JSON validation with tree visualization
-Favicon Generator | Simple icon creator with multiple size exports
-Historical Timeline | Interactive event timeline with animations
-Tic Tac Toe | Strategic grid game with clean lines and victory animations
-Circuit Builder | Simple digital logic gate simulator
-Noise Generator | Perlin noise-based pattern creator
-Sitemap Generator | Visual sitemap creator with XML export
-Logo Maker | Basic logo generation tool with shape primitives
-Sleep Calculator | Bedtime optimizer based on sleep cycles
-File Converter | Basic text file format converter
-Font Pairing | Typography combination tool with preview text
-Invoice Generator | Simple invoice creation with PDF export
-Workout Timer | Exercise interval timer with rest periods
-Kaleidoscope | Interactive symmetrical pattern creator with color options
-Link Shortener | URL shortening tool with click tracking
-Color Blindness Simulator | Image filter for different color vision types
-Flappy Bird Clone | Side-scrolling obstacle avoidance with minimalist graphics
-Unit Converter | Measurement conversion across multiple systems
-Gradient Editor | Interactive gradient background generator with bezier curves
-Image Cropper | Simple image cropping tool with aspect ratio controls
-Stretching Guide | Simple stretch routine with animations
-Flashcard Maker | Study card creator with spaced repetition
-Mandala Maker | Symmetrical pattern creator with multiple brush types
-Color Match | Fast-paced color and word matching game with timed rounds
-Tetris Clone | A minimal implementation of the classic block-stacking game with neon aesthetics
-Pattern Maker | Geometric pattern generator with randomization options
-Meta Tag Generator | SEO-friendly meta tag creator with preview
+Emoji Story | Interactive story generator where you can only use emojis to communicate
+Bookshelf 3D | Virtual bookshelf creator with CSS 3D transforms and spine customization
+Weather Art | Tool that generates abstract art based on current weather conditions
+Code Poetry | Programming language syntax-based poetry generator and formatter
+Bio Link | Minimalist personal link aggregator with theme customization
+Pixel Speech | Convert voice input into retro-style pixel art visualizations
+Fortune Cookie | Digital fortune cookie generator with paper fold animation
+Tea Timer | Specialized tea steeping timer with different tea type presets
+Plant Pixel | Virtual pixel art plant that grows based on local time
+Music Box | Custom music box melody creator with animated visualization
