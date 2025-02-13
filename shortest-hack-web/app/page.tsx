@@ -74,12 +74,12 @@ export default async function Home() {
       {validProjects.length === 0 && (
         <div className="text-center py-16">
           <p className="text-2xl font-mono mb-8">No projects yet</p>
-          <Link
+          {/* <Link
             href="/new"
             className="px-8 py-4 bg-black text-white font-mono hover:bg-gray-800 transition-colors inline-block border-2 border-black"
           >
             CREATE YOUR FIRST PROJECT
-          </Link>
+          </Link> */}
         </div>
       )}
     </div>
