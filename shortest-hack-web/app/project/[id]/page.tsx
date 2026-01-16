@@ -16,6 +16,10 @@ interface Props {
   }>;
 }
 
+// Revalidate every 30 days (2592000 seconds)
+// Since this is a completed hackathon project, content rarely changes
+export const revalidate = 2592000;
+
 export async function generateStaticParams() {
   const projects = await getProjectsStatic();
   return projects.map((project) => ({

@@ -9,6 +9,10 @@ interface Project {
   initial_prompt: string | null;
 }
 
+// Revalidate every 30 days (2592000 seconds)
+// Since this is a completed hackathon project, content rarely changes
+export const revalidate = 2592000;
+
 export default async function Home() {
   const projects = await getProjectsStatic();
   // Filter out projects with empty HTML content
