@@ -14,10 +14,6 @@ export const metadata = {
   description: "",
 };
 
-// Fixes the build for now...
-export const dynamic = 'force-dynamic';
-
-
 const geistSans = Geist({
   display: "swap",
   subsets: ["latin"],

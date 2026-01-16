@@ -157,8 +157,28 @@ export const getProjectsStatic = async () => {
 
   const { data, error } = await supabase
     .from('projects')
-    .select('*')
+    .select('id, name, html_content, initial_prompt, created_at')
     .order('created_at', { ascending: false });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+};
+
+export const getProjectById = async (id: number) => {
+  // Create a Supabase client without cookies for static data fetching
+  const supabase = createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
+  const { data, error } = await supabase
+    .from('projects')
+    .select('id, name, html_content, initial_prompt')
+    .eq('id', id)
+    .single();
 
   if (error) {
     throw new Error(error.message);
