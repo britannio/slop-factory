@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProjectsStatic } from '@/app/actions';
+import { getProjectsStatic, getProjectById } from '@/app/actions';
 import { notFound } from 'next/navigation';
 import { LazyIframe } from '@/app/components/LazyIframe';
 
@@ -16,6 +16,10 @@ interface Props {
   }>;
 }
 
+// Revalidate every 30 days (2592000 seconds)
+// Since this is a completed hackathon project, content rarely changes
+export const revalidate = 2592000;
+
 export async function generateStaticParams() {
   const projects = await getProjectsStatic();
   return projects.map((project) => ({
@@ -24,12 +28,14 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const [projects, { id }] = await Promise.all([
-    getProjectsStatic(),
-    params
-  ]);
-  
-  const project = projects.find(p => p.id === Number(id));
+  const { id } = await params;
+
+  let project;
+  try {
+    project = await getProjectById(Number(id));
+  } catch (error) {
+    notFound();
+  }
 
   if (!project) {
     notFound();
